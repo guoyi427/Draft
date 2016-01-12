@@ -15,6 +15,13 @@
 		28CAF6A71C44A5CF000DA3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28CAF6A51C44A5CF000DA3DB /* LaunchScreen.storyboard */; };
 		28CAF6B21C44A5CF000DA3DB /* gl_4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6B11C44A5CF000DA3DB /* gl_4Tests.m */; };
 		28CAF6BD1C44A5CF000DA3DB /* gl_4UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6BC1C44A5CF000DA3DB /* gl_4UITests.m */; };
+		28CAF6CB1C44CE80000DA3DB /* VertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 28CAF6CA1C44CE80000DA3DB /* VertexShader.glsl */; };
+		28CAF6CD1C44CE90000DA3DB /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 28CAF6CC1C44CE90000DA3DB /* FragmentShader.glsl */; };
+		28CAF6D01C44CEA1000DA3DB /* ShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6CF1C44CEA1000DA3DB /* ShaderManager.m */; };
+		28CAF6D31C44CEAC000DA3DB /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6D21C44CEAC000DA3DB /* OpenGLView.m */; };
+		28CAF6DE1C44E068000DA3DB /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6D91C44E068000DA3DB /* GLESUtils.m */; };
+		28CAF6DF1C44E068000DA3DB /* ksMatrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6DA1C44E068000DA3DB /* ksMatrix.c */; };
+		28CAF6E01C44E068000DA3DB /* ksVector.c in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF6DC1C44E068000DA3DB /* ksVector.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,18 @@
 		28CAF6B81C44A5CF000DA3DB /* gl_4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gl_4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28CAF6BC1C44A5CF000DA3DB /* gl_4UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gl_4UITests.m; sourceTree = "<group>"; };
 		28CAF6BE1C44A5CF000DA3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28CAF6CA1C44CE80000DA3DB /* VertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexShader.glsl; sourceTree = "<group>"; };
+		28CAF6CC1C44CE90000DA3DB /* FragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentShader.glsl; sourceTree = "<group>"; };
+		28CAF6CE1C44CEA1000DA3DB /* ShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderManager.h; sourceTree = "<group>"; };
+		28CAF6CF1C44CEA1000DA3DB /* ShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderManager.m; sourceTree = "<group>"; };
+		28CAF6D11C44CEAC000DA3DB /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		28CAF6D21C44CEAC000DA3DB /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		28CAF6D81C44E068000DA3DB /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
+		28CAF6D91C44E068000DA3DB /* GLESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESUtils.m; sourceTree = "<group>"; };
+		28CAF6DA1C44E068000DA3DB /* ksMatrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ksMatrix.c; sourceTree = "<group>"; };
+		28CAF6DB1C44E068000DA3DB /* ksMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ksMatrix.h; sourceTree = "<group>"; };
+		28CAF6DC1C44E068000DA3DB /* ksVector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ksVector.c; sourceTree = "<group>"; };
+		28CAF6DD1C44E068000DA3DB /* ksVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ksVector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +120,17 @@
 		28CAF6961C44A5CF000DA3DB /* gl_4 */ = {
 			isa = PBXGroup;
 			children = (
+				28CAF6D71C44E068000DA3DB /* Utils */,
 				28CAF69A1C44A5CF000DA3DB /* AppDelegate.h */,
 				28CAF69B1C44A5CF000DA3DB /* AppDelegate.m */,
 				28CAF69D1C44A5CF000DA3DB /* ViewController.h */,
 				28CAF69E1C44A5CF000DA3DB /* ViewController.m */,
+				28CAF6D11C44CEAC000DA3DB /* OpenGLView.h */,
+				28CAF6D21C44CEAC000DA3DB /* OpenGLView.m */,
+				28CAF6CE1C44CEA1000DA3DB /* ShaderManager.h */,
+				28CAF6CF1C44CEA1000DA3DB /* ShaderManager.m */,
+				28CAF6CA1C44CE80000DA3DB /* VertexShader.glsl */,
+				28CAF6CC1C44CE90000DA3DB /* FragmentShader.glsl */,
 				28CAF6A01C44A5CF000DA3DB /* Main.storyboard */,
 				28CAF6A31C44A5CF000DA3DB /* Assets.xcassets */,
 				28CAF6A51C44A5CF000DA3DB /* LaunchScreen.storyboard */,
@@ -138,6 +164,19 @@
 				28CAF6BE1C44A5CF000DA3DB /* Info.plist */,
 			);
 			path = gl_4UITests;
+			sourceTree = "<group>";
+		};
+		28CAF6D71C44E068000DA3DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				28CAF6D81C44E068000DA3DB /* GLESUtils.h */,
+				28CAF6D91C44E068000DA3DB /* GLESUtils.m */,
+				28CAF6DA1C44E068000DA3DB /* ksMatrix.c */,
+				28CAF6DB1C44E068000DA3DB /* ksMatrix.h */,
+				28CAF6DC1C44E068000DA3DB /* ksVector.c */,
+				28CAF6DD1C44E068000DA3DB /* ksVector.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +284,9 @@
 			files = (
 				28CAF6A71C44A5CF000DA3DB /* LaunchScreen.storyboard in Resources */,
 				28CAF6A41C44A5CF000DA3DB /* Assets.xcassets in Resources */,
+				28CAF6CB1C44CE80000DA3DB /* VertexShader.glsl in Resources */,
 				28CAF6A21C44A5CF000DA3DB /* Main.storyboard in Resources */,
+				28CAF6CD1C44CE90000DA3DB /* FragmentShader.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CAF6DF1C44E068000DA3DB /* ksMatrix.c in Sources */,
+				28CAF6D01C44CEA1000DA3DB /* ShaderManager.m in Sources */,
 				28CAF69F1C44A5CF000DA3DB /* ViewController.m in Sources */,
 				28CAF69C1C44A5CF000DA3DB /* AppDelegate.m in Sources */,
+				28CAF6E01C44E068000DA3DB /* ksVector.c in Sources */,
 				28CAF6991C44A5CF000DA3DB /* main.m in Sources */,
+				28CAF6DE1C44E068000DA3DB /* GLESUtils.m in Sources */,
+				28CAF6D31C44CEAC000DA3DB /* OpenGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +459,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = gl_4/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gl-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +472,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = gl_4/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gl-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
