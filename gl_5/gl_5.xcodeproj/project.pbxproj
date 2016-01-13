@@ -19,6 +19,9 @@
 		28CAF7251C452840000DA3DB /* ShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CAF7241C452840000DA3DB /* ShaderManager.m */; };
 		28CAF7271C452851000DA3DB /* VertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 28CAF7261C452851000DA3DB /* VertexShader.glsl */; };
 		28CAF7291C452864000DA3DB /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 28CAF7281C452864000DA3DB /* FragmentShader.glsl */; };
+		28F949DD1C4621FC00C19909 /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F949D81C4621FC00C19909 /* GLESUtils.m */; };
+		28F949DE1C4621FC00C19909 /* ksMatrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 28F949D91C4621FC00C19909 /* ksMatrix.c */; };
+		28F949DF1C4621FC00C19909 /* ksVector.c in Sources */ = {isa = PBXBuildFile; fileRef = 28F949DB1C4621FC00C19909 /* ksVector.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,12 @@
 		28CAF7241C452840000DA3DB /* ShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderManager.m; sourceTree = "<group>"; };
 		28CAF7261C452851000DA3DB /* VertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexShader.glsl; sourceTree = "<group>"; };
 		28CAF7281C452864000DA3DB /* FragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentShader.glsl; sourceTree = "<group>"; };
+		28F949D71C4621FC00C19909 /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
+		28F949D81C4621FC00C19909 /* GLESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESUtils.m; sourceTree = "<group>"; };
+		28F949D91C4621FC00C19909 /* ksMatrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ksMatrix.c; sourceTree = "<group>"; };
+		28F949DA1C4621FC00C19909 /* ksMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ksMatrix.h; sourceTree = "<group>"; };
+		28F949DB1C4621FC00C19909 /* ksVector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ksVector.c; sourceTree = "<group>"; };
+		28F949DC1C4621FC00C19909 /* ksVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ksVector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +120,7 @@
 		28CAF6EC1C45280C000DA3DB /* gl_5 */ = {
 			isa = PBXGroup;
 			children = (
+				28F949D61C4621FC00C19909 /* Utils */,
 				28CAF6F01C45280C000DA3DB /* AppDelegate.h */,
 				28CAF6F11C45280C000DA3DB /* AppDelegate.m */,
 				28CAF6F31C45280C000DA3DB /* ViewController.h */,
@@ -154,6 +164,19 @@
 				28CAF7141C45280C000DA3DB /* Info.plist */,
 			);
 			path = gl_5UITests;
+			sourceTree = "<group>";
+		};
+		28F949D61C4621FC00C19909 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				28F949D71C4621FC00C19909 /* GLESUtils.h */,
+				28F949D81C4621FC00C19909 /* GLESUtils.m */,
+				28F949D91C4621FC00C19909 /* ksMatrix.c */,
+				28F949DA1C4621FC00C19909 /* ksMatrix.h */,
+				28F949DB1C4621FC00C19909 /* ksVector.c */,
+				28F949DC1C4621FC00C19909 /* ksVector.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,10 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F949DE1C4621FC00C19909 /* ksMatrix.c in Sources */,
 				28CAF6F51C45280C000DA3DB /* ViewController.m in Sources */,
 				28CAF6F21C45280C000DA3DB /* AppDelegate.m in Sources */,
 				28CAF6EF1C45280C000DA3DB /* main.m in Sources */,
+				28F949DF1C4621FC00C19909 /* ksVector.c in Sources */,
 				28CAF7221C452828000DA3DB /* OpenGLView.m in Sources */,
+				28F949DD1C4621FC00C19909 /* GLESUtils.m in Sources */,
 				28CAF7251C452840000DA3DB /* ShaderManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +546,7 @@
 				28CAF7191C45280C000DA3DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28CAF71A1C45280C000DA3DB /* Build configuration list for PBXNativeTarget "gl_5Tests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +555,7 @@
 				28CAF71C1C45280C000DA3DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28CAF71D1C45280C000DA3DB /* Build configuration list for PBXNativeTarget "gl_5UITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +564,7 @@
 				28CAF71F1C45280C000DA3DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
