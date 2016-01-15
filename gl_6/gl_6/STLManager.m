@@ -68,8 +68,7 @@ typedef struct FaceStruct {
         
         NSLog(@"face %f %f %f",
               face.v1.x,face.v1.y,face.v1.z
-//              face.v1.r,face.v1.g,face.v1.b
-//              face.v1.s,face.v1.t,face.v1.p
+
               );
     }
     
