@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import "OpenGLView.h"
+#import "STLManager.h"
+
 @interface ViewController ()
 
 @end
@@ -16,8 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
+    
+    STLManager *modelManager = [STLManager stlMananger];
+    
+    
+    OpenGLView *glView = [[OpenGLView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:glView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
