@@ -20,9 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    STLManager *modelManager = [STLManager stlMananger];
-    
-    
     OpenGLView *glView = [[OpenGLView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:glView];
     

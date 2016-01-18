@@ -15,7 +15,10 @@
 		28A6B1BE1C48D94A009F5E3A /* ksMatrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A6B1B91C48D94A009F5E3A /* ksMatrix.c */; };
 		28A6B1BF1C48D94A009F5E3A /* ksVector.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A6B1BB1C48D94A009F5E3A /* ksVector.c */; };
 		28A6B1C21C4901A4009F5E3A /* STLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A6B1C11C4901A4009F5E3A /* STLManager.m */; };
-		28A6B1C41C4901BF009F5E3A /* RevolvedModel.stl in Resources */ = {isa = PBXBuildFile; fileRef = 28A6B1C31C4901BF009F5E3A /* RevolvedModel.stl */; };
+		28C5473C1C4CCA840021C623 /* RevolvedModel 2.stl in Resources */ = {isa = PBXBuildFile; fileRef = 28C547391C4CCA840021C623 /* RevolvedModel 2.stl */; };
+		28C5473D1C4CCA840021C623 /* RevolvedModel 3.stl in Resources */ = {isa = PBXBuildFile; fileRef = 28C5473A1C4CCA840021C623 /* RevolvedModel 3.stl */; };
+		28C5473E1C4CCA840021C623 /* RevolvedModel 4.stl in Resources */ = {isa = PBXBuildFile; fileRef = 28C5473B1C4CCA840021C623 /* RevolvedModel 4.stl */; };
+		28C547401C4CCBE50021C623 /* blade_1.stl in Resources */ = {isa = PBXBuildFile; fileRef = 28C5473F1C4CCBE50021C623 /* blade_1.stl */; };
 		28F949EE1C4645F400C19909 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F949ED1C4645F400C19909 /* main.m */; };
 		28F949F11C4645F400C19909 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F949F01C4645F400C19909 /* AppDelegate.m */; };
 		28F949F41C4645F400C19909 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F949F31C4645F400C19909 /* ViewController.m */; };
@@ -58,7 +61,10 @@
 		28A6B1BC1C48D94A009F5E3A /* ksVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ksVector.h; sourceTree = "<group>"; };
 		28A6B1C01C4901A4009F5E3A /* STLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLManager.h; sourceTree = "<group>"; };
 		28A6B1C11C4901A4009F5E3A /* STLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLManager.m; sourceTree = "<group>"; };
-		28A6B1C31C4901BF009F5E3A /* RevolvedModel.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = RevolvedModel.stl; sourceTree = "<group>"; };
+		28C547391C4CCA840021C623 /* RevolvedModel 2.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RevolvedModel 2.stl"; sourceTree = "<group>"; };
+		28C5473A1C4CCA840021C623 /* RevolvedModel 3.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RevolvedModel 3.stl"; sourceTree = "<group>"; };
+		28C5473B1C4CCA840021C623 /* RevolvedModel 4.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RevolvedModel 4.stl"; sourceTree = "<group>"; };
+		28C5473F1C4CCBE50021C623 /* blade_1.stl */ = {isa = PBXFileReference; lastKnownFileType = file; path = blade_1.stl; sourceTree = "<group>"; };
 		28F949E91C4645F400C19909 /* gl_6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gl_6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F949ED1C4645F400C19909 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28F949EF1C4645F400C19909 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,7 +157,10 @@
 				28A6B1C11C4901A4009F5E3A /* STLManager.m */,
 				28A6B1B21C48D047009F5E3A /* VertexShader.glsl */,
 				28A6B1B41C48D053009F5E3A /* FragmentShader.glsl */,
-				28A6B1C31C4901BF009F5E3A /* RevolvedModel.stl */,
+				28C547391C4CCA840021C623 /* RevolvedModel 2.stl */,
+				28C5473A1C4CCA840021C623 /* RevolvedModel 3.stl */,
+				28C5473B1C4CCA840021C623 /* RevolvedModel 4.stl */,
+				28C5473F1C4CCBE50021C623 /* blade_1.stl */,
 				28F949F51C4645F400C19909 /* Main.storyboard */,
 				28F949F81C4645F400C19909 /* Assets.xcassets */,
 				28F949FA1C4645F400C19909 /* LaunchScreen.storyboard */,
@@ -290,12 +299,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C5473E1C4CCA840021C623 /* RevolvedModel 4.stl in Resources */,
 				28F949FC1C4645F400C19909 /* LaunchScreen.storyboard in Resources */,
 				28F949F91C4645F400C19909 /* Assets.xcassets in Resources */,
+				28C5473C1C4CCA840021C623 /* RevolvedModel 2.stl in Resources */,
+				28C5473D1C4CCA840021C623 /* RevolvedModel 3.stl in Resources */,
 				28A6B1B31C48D047009F5E3A /* VertexShader.glsl in Resources */,
 				28F949F71C4645F400C19909 /* Main.storyboard in Resources */,
-				28A6B1C41C4901BF009F5E3A /* RevolvedModel.stl in Resources */,
 				28A6B1B51C48D053009F5E3A /* FragmentShader.glsl in Resources */,
+				28C547401C4CCBE50021C623 /* blade_1.stl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,13 +36,13 @@ typedef struct FaceStruct {
 {
     self = [super init];
     if (self) {
-        [self _prepareData];
+
     }
     return self;
 }
 
-- (void)_prepareData {
-    NSString *stlPath = [[NSBundle mainBundle] pathForResource:@"RevolvedModel" ofType:@"stl"];
+- (int)getStlWithVertice:(GLfloat *)vertice {
+    NSString *stlPath = [[NSBundle mainBundle] pathForResource:@"RevolvedModel 4" ofType:@"stl"];
    
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:stlPath];
     
@@ -59,6 +59,7 @@ typedef struct FaceStruct {
     unsigned long long stripeCount = (fileSize - SubfixSize - 4) / FaceStructSize;
     
     NSLog(@"stripe count = %llu",stripeCount);
+    int vertexCount = 0;
     
     for (int stripe = 0; stripe < stripeCount; stripe ++) {
         NSData *stripeData = [fileHandle readDataOfLength:FaceStructSize];
@@ -66,13 +67,23 @@ typedef struct FaceStruct {
         FaceStruct face = {};
         [stripeData getBytes:&face length:FaceStructSize];
         
-        NSLog(@"face %f %f %f",
-              face.v1.x,face.v1.y,face.v1.z
-
-              );
+        vertice[stripe * 9] =       face.v1.x;
+        vertice[stripe * 9 + 1] =   face.v1.y;
+        vertice[stripe * 9 + 2] =   face.v1.z;
+        
+        vertice[stripe * 9 + 3] =   face.v2.x;
+        vertice[stripe * 9 + 4] =   face.v2.y;
+        vertice[stripe * 9 + 5] =   face.v2.z;
+        
+        vertice[stripe * 9 + 6] =   face.v2.x;
+        vertice[stripe * 9 + 7] =   face.v3.y;
+        vertice[stripe * 9 + 8] =   face.v3.z;
+        
+        vertexCount += 9;
     }
     
     [fileHandle closeFile];
+    return vertexCount;
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "ShaderManager.h"
 #import "ksMatrix.h"
 #import "GLESUtils.h"
+#import "STLManager.h"
 
 @interface OpenGLView ()
 {
@@ -31,9 +32,15 @@
     
     ksMatrix4 _projectionMatrix;
     ksMatrix4 _modelViewMatrix;
+    
+    float _touchPoint_y;
 }
 
 @end
+
+GLfloat vertices[120000] = {
+    
+};
 
 @implementation OpenGLView
 
@@ -50,7 +57,7 @@
         [self setupBuffers];
         [self setupProgram];
         [self setupProjection];
-        [self render];
+        [self renderWithOffset:0];
     }
     return self;
 }
@@ -117,46 +124,52 @@
 
 - (void)setupProjection {
     ksMatrixLoadIdentity(&_projectionMatrix);
-    ksPerspective(&_projectionMatrix, 100, self.bounds.size.width / self.bounds.size.height, 1, 20);
+    ksPerspective(&_projectionMatrix, 30, self.bounds.size.width / self.bounds.size.height, 1, 20);
     
     glUniformMatrix4fv(_projectionSlot, 1, GL_FALSE, (GLfloat *)&_projectionMatrix.m[0][0]);
-    glEnable(GL_CULL_FACE);
+//    glEnable(GL_CULL_FACE);
 }
 
-- (void)updateTransform {
+- (void)updateTransformWithOffset:(float)offset {
     ksMatrixLoadIdentity(&_modelViewMatrix);
     ksMatrixTranslate(&_modelViewMatrix, 0, 0, -5.5);
+    ksMatrixRotate(&_modelViewMatrix, offset, 0, 1, 0);
     glUniformMatrix4fv(_modelViewSlot, 1, GL_FALSE, (GLfloat *)&_modelViewMatrix.m[0][0]);
 }
 
 - (void)drawGraph {
-    GLfloat vertices[] = {
-        0.5,    0.5,    0.5,    1.0,    0.0,    0.0,    1.0,
-        -0.5,   0.5,    0.5,    0.0,    1.0,    0.0,    1.0,
-        -0.5,   -0.5,   0.5,    0.0,    1.0,    1.0,    1.0,
-        0.5,    -0.5,   0.5,    0.0,    0.0,    1.0,    1.0,
-    };
     
-    GLubyte indices[] = {
-        0,1,2, 2,3,0
-    };
-    
-    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, vertices);
-    glVertexAttribPointer(_sourceColorSlot, 4, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, vertices + 3);
+    STLManager *glStlManager = [STLManager stlMananger];
+    int count = [glStlManager getStlWithVertice:vertices];
+    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, vertices);
+//    glVertexAttribPointer(_sourceColorSlot, 4, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 7, vertices + 3);
     glEnableVertexAttribArray(_positionSlot);
-    glEnableVertexAttribArray(_sourceColorSlot);
-    glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(GLubyte), GL_UNSIGNED_BYTE, indices);
+//    glEnableVertexAttribArray(_sourceColorSlot);
+//    glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(GLubyte), GL_UNSIGNED_BYTE, indices);
+    glDrawArrays(GL_TRIANGLES, 0, count);
 }
 
-- (void)render {
+- (void)renderWithOffset:(float)offset {
     glClearColor(0.6, 0.1, 0.5, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
     glViewport(0, 0, self.bounds.size.width, self.bounds.size.height);
-    [self updateTransform];
+    [self updateTransformWithOffset:offset];
     [self drawGraph];
     
     [_context presentRenderbuffer:GL_RENDERBUFFER];
+}
+
+#pragma mark - Touch - Delegate
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    _touchPoint_y = [touches.anyObject locationInView:self].y;
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    float point_y = [touches.anyObject locationInView:self].y;
+    float offset_y = point_y - _touchPoint_y;
+    [self renderWithOffset:offset_y];
 }
 
 @end

@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import <OpenGLES/ES2/gl.h>
+
 @interface STLManager : NSObject
 
 + (instancetype)stlMananger;
+
+- (int)getStlWithVertice:(GLfloat *)vertice;
 
 @end
